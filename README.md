@@ -1,6 +1,6 @@
 # Ansible Role: users
 
-[![Build Status](https://travis-ci.org/youtous/ansible-users.svg?branch=master)](https://travis-ci.org/youtous/ansible-users)
+[![Build Status](https://travis-ci.com/youtous/ansible-users.svg?branch=master)](https://travis-ci.com/youtous/ansible-users)
 
 Role to manage users on a system.
 
