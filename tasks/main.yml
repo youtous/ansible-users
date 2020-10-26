@@ -40,14 +40,11 @@
 
 - name: SSH keys
   authorized_key:
-    user: "{{ item.0.username }}"
-    key: "{{ item.1 | join('\n') }}"
-    path: "{{ item.0.home | default('/home/' + item.0.username)  }}/.ssh/authorized_keys"
+    user: "{{ item.username }}"
+    key: "{{ item.ssh_key | join('\n') }}"
+    path: "{{ item.home | default('/home/' + item.username)  }}/.ssh/authorized_keys"
     exclusive: yes
-  with_subelements:
-    - "{{ users }}"
-    - ssh_key
-    - skip_missing: yes
+  with_items: "{{ users }}"
   tags: ["users", "configuration"]
 
 - name: Setup user profiles
